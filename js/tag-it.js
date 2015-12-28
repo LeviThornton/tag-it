@@ -205,7 +205,7 @@
                     });
                 } else {
                     // Create our single field input after our list.
-                    this.options.singleFieldNode = $('<input type="hidden" style="display:none;" value="" name="' + this.options.fieldName + '" />');
+                    this.options.singleFieldNode = $('<input type="hidden" style="display:none;" value="" name="' + this.options.fieldName + '[]" />');
                     this.tagList.after(this.options.singleFieldNode);
                 }
             }
@@ -495,7 +495,7 @@
             // Unless options.singleField is set, each tag has a hidden input field inline.
             if (!this.options.singleField) {
                 var escapedValue = label.html();
-                tag.append('<input type="hidden" value="' + escapedValue + '" name="' + this.options.fieldName + '" class="tagit-hidden-field" />');
+                tag.append('<input type="hidden" value="' + escapedValue + '" name="' + this.options.fieldName + '[]" class="tagit-hidden-field" />');
             }
 
             if (this._trigger('beforeTagAdded', null, {
